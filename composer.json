@@ -1,0 +1,14 @@
+{
+  "config": {
+    "platform": {
+      "php": "8.2"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+  },
+  "require-dev": {
+    "symplify/easy-coding-standard": "11.2.2"
+  }
+}
