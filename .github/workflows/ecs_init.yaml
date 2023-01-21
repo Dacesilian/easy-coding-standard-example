@@ -1,0 +1,27 @@
+name: ECS Init
+
+on:
+  pull_request: null
+  push:
+    branches:
+      - master
+
+jobs:
+  ecs_init:
+    strategy:
+      fail-fast: false
+
+    runs-on: ubuntu-latest
+
+    steps:
+      -   uses: actions/checkout@v2
+
+      -   uses: shivammathur/setup-php@v2
+          with:
+            php-version: 8.2
+            coverage: none
+
+      # composer install cache - https://github.com/ramsey/composer-install
+      -   uses: "ramsey/composer-install@v2"
+
+      -   run: vendor/bin/ecs init
